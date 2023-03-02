@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-const deadlineExceededText = "请求GPT服务器超时[裂开]得不到回复，请重新发送问题[旺柴]"
+const deadlineExceededText = "来自ChatGPT回复：\n请求OpenAI服务器超时，请重新发送问题"
 
 var c = cache.New(config.LoadConfig().SessionTimeout, time.Minute*5)
 

@@ -51,7 +51,7 @@ type ChatGPTRequestBody struct {
 //curl https://api.openai.com/v1/completions
 //-H "Content-Type: application/json"
 //-H "Authorization: Bearer your chatGPT key"
-//-d '{"model": "text-davinci-003", "prompt": "give me good song", "temperature": 0, "max_tokens": 7}'
+//-d '{"model": "gpt-3.5-turbo", "prompt": "give me good song", "temperature": 0, "max_tokens": 7}'
 func Completions(msg string) (string, error) {
 	var gptResponseBody *ChatGPTResponseBody
 	var resErr error

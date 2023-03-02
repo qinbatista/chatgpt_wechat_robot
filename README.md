@@ -50,7 +50,7 @@ $ docker run -itd --name wechatbot --restart=always \
  -e APIKEY=换成你的key \
  -e AUTO_PASS=false \
  -e SESSION_TIMEOUT=60s \
- -e MODEL=text-davinci-003 \
+ -e MODEL=gpt-3.5-turbo \
  -e MAX_TOKENS=512 \
  -e TEMPREATURE=0.9 \
  -e REPLY_PREFIX=我是来自机器人回复: \
@@ -58,8 +58,8 @@ $ docker run -itd --name wechatbot --restart=always \
  docker.mirrors.sjtug.sjtu.edu.cn/qingshui869413421/wechatbot:latest
 
 # 查看二维码
-$ docker exec -it wechatbot bash 
-$ tail -f -n 50 /app/run.log 
+$ docker exec -it wechatbot bash
+$ tail -f -n 50 /app/run.log
 ```
 
 运行命令中映射的配置文件参考下边的配置文件说明。
@@ -74,8 +74,8 @@ $ cp config.dev.json config.json  # 其中 config.dev.json 从项目的根目录
 $ docker run -itd --name wechatbot -v `pwd`/config.json:/app/config.json docker.mirrors.sjtug.sjtu.edu.cn/qingshui869413421/wechatbot:latest
 
 # 查看二维码
-$ docker exec -it wechatbot bash 
-$ tail -f -n 50 /app/run.log 
+$ docker exec -it wechatbot bash
+$ tail -f -n 50 /app/run.log
 ```
 
 其中配置文件参考下边的配置文件说明。
@@ -106,7 +106,7 @@ $ go run main.go
   "auto_pass": true,                # 是否自动通过好友添加
   "session_timeout": 60,            # 会话超时时间，默认60秒，单位秒，在会话时间内所有发送给机器人的信息会作为上下文
   "max_tokens": 1024,               # GPT响应字符数，最大2048，默认值512。会影响接口响应速度，字符越大响应越慢
-  "model": "text-davinci-003",      # GPT选用模型，默认text-davinci-003，具体选项参考官网训练场
+  "model": "gpt-3.5-turbo",      # GPT选用模型，默认text-davinci-003，具体选项参考官网训练场
   "temperature": 1,                 # GPT热度，0到1，默认0.9，数字越大创造力越强，但更偏离训练事实，越低越接近训练事实
   "reply_prefix": "来自机器人回复：", # 私聊回复前缀
   "session_clear_token": "清空会话"  # 会话清空口令，默认`下一个问题`

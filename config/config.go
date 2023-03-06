@@ -43,7 +43,7 @@ func LoadConfig() *Configuration {
 			SessionTimeout:    60,
 			MaxTokens:         512,
 			Model:             "gpt-3.5-turbo",
-			Temperature:       0.9,
+			Temperature:       1,
 			SessionClearToken: "下个问题",
 		}
 

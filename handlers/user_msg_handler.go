@@ -134,7 +134,7 @@ func (h *UserMessageHandler) getRequestText() string {
 	runeRequestText := []rune(requestText)
 	lastChar := string(runeRequestText[len(runeRequestText)-1:])
 	if strings.Index(punctuation, lastChar) < 0 {
-		requestText = requestText + "？" // 判断最后字符是否加了标点，没有的话加上句号，避免openai自动补齐引起混乱。
+		requestText = requestText // 判断最后字符是否加了标点，没有的话加上句号，避免openai自动补齐引起混乱。
 	}
 
 	// 4.返回请求文本
